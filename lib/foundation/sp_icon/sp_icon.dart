@@ -4,12 +4,12 @@ class SPIcon extends StatelessWidget {
   const SPIcon(
       {Key? key,
       required this.assetname,
-      required this.index,
-      required this.currentIndex})
+       this.index,
+       this.currentIndex})
       : super(key: key);
   final String assetname;
-  final int index;
-  final int currentIndex;
+  final int? index;
+  final int? currentIndex;
 
   @override
   Widget build(BuildContext context) {
