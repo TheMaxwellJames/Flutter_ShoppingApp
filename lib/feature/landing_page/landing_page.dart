@@ -30,24 +30,21 @@ class _LandingPageState extends State<LandingPage> {
           BottomNavigationBarItem(
             icon: SPIcon(
               assetname: "logo-black.png",
-              index: 0,
-              currentIndex: currentIndex,
+              isSelected: 0 ==currentIndex,
             ),
             label: "Home",
           ),
           BottomNavigationBarItem(
             icon: SPIcon(
               assetname: "categories.png",
-              index: 1,
-              currentIndex: currentIndex,
+               isSelected: 1 ==currentIndex,
             ),
             label: "Categories",
           ),
           BottomNavigationBarItem(
             icon: SPIcon(
               assetname: "profile.png",
-              index: 2,
-              currentIndex: currentIndex,
+              isSelected: 2 ==currentIndex,
             ),
             label: "Profile",
           ),

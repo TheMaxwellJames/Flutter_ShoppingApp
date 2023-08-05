@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecom/foundation/sp_icon/sp_icon.dart';
 
 class ProfileItem extends StatelessWidget {
-  const ProfileItem({super.key});
+  const ProfileItem({Key? key, 
+  required this.title, 
+  this.subtitle, 
+  required this.assetName, 
+  required this.isLast }) : super(key: key);
+
+  final String title;
+  final String? subtitle;
+  final String assetName;
+  final bool isLast;
 
   @override
   Widget build(BuildContext context) {
@@ -12,21 +21,28 @@ class ProfileItem extends StatelessWidget {
         Container(
           height: 68,
           child: ListTile(
-            leading: SPIcon(assetname: "orders.png", 
+            leading: SPIcon(assetname: assetName, 
             ),
-            title: Text("Orders",
+            title: Text(
+              title,
               style: Theme.of(context).textTheme.bodyLarge, 
           
             ),
-            subtitle: Text("Check your orders",
+            subtitle: subtitle!=null? Text(
+             subtitle!,
              style: Theme.of(context).textTheme.bodyMedium, 
-            ),
-            trailing: Icon(CupertinoIcons.chevron_forward,
-              size: 18,
+            )
+            : null,
+            trailing: InkWell(
+              onTap: () {},
+              child: const Icon(
+                CupertinoIcons.chevron_forward,
+                size: 18,
+              ),
             ),
           ),
         ),
-        Divider(),
+      isLast? Container() : const Divider(),
       ],
     );
   }

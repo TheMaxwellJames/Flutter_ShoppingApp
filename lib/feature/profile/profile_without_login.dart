@@ -27,21 +27,59 @@ class ProfileWithoutLogin extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 15,
+      const  SizedBox(height: 15,
         ),
         Container(
           color: AppColor.whiteColor,
-          child: Column(
-          children: [
-            ProfileItem(),
-              ProfileItem(),
-              ProfileItem(),
-                ProfileItem(),
-                  ProfileItem(),
+          child: const Column(
+          children:  [
+            ProfileItem(
+              title: "Orders",
+              subtitle: "Check your orders status",
+              assetName: "orders.png",
+               isLast: false,
+            ),
 
-              
+             ProfileItem(
+              title: "Help Center",
+              subtitle: "Help regarding your recent purchase",
+              assetName: "orders.png",
+              isLast: false,
+            ),  
+
+               ProfileItem(
+              title: "Wishlist",
+              subtitle: "Your most love style",
+              assetName: "wishlist.png",
+               isLast: true,
+            ), 
           ],
-        ))
+        ),
+        ),
+
+            const  SizedBox(height: 15,
+        ),
+
+           Container(
+          color: AppColor.whiteColor,
+          child: const Column(
+          children:  [
+            ProfileItem(
+              title: "Scan for coupon",
+              
+              assetName: "orders.png",
+               isLast: false,
+            ),
+
+          
+               ProfileItem(
+              title: "Refer & Earn",
+              assetName: "wishlist.png",
+               isLast: true,
+            ), 
+          ],
+        ),
+        ),
       ],
     );
   }
