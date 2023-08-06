@@ -13,5 +13,9 @@ class AppColor {
 
         static const Color captionColor  = Color(0xffbcbabf);
 
+        static const Color buttonColor  = Color(0xfffe416c);
+
+
+
    
 }
