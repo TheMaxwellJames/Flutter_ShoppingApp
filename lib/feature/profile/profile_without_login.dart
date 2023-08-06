@@ -9,7 +9,7 @@ class ProfileWithoutLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: ClampingScrollPhysics(), // Use ClampingScrollPhysics here
       child: Column(
         children: [
           Container(
@@ -37,7 +37,8 @@ class ProfileWithoutLogin extends StatelessWidget {
                     child: Card(
                       child: Container(
                         padding: EdgeInsets.all(25),
-                        child: Image.asset("assets/images/profile.png")),
+                        child: Image.asset("assets/images/profile.png"),
+                      ),
                       color: AppColor.captionColor,
                     ),
                   ),
@@ -46,32 +47,28 @@ class ProfileWithoutLogin extends StatelessWidget {
                 Positioned(
                   bottom: 22,
                   left: 168,
-
-                  child: 
-                  ElevatedButton(
-                    onPressed: (){}, 
+                  child: ElevatedButton(
+                    onPressed: () {},
                     style: ButtonStyle(
-                      elevation:  MaterialStateProperty.all(0),
+                      elevation: MaterialStateProperty.all(0),
                       backgroundColor:
-                       MaterialStateProperty.all(AppColor.buttonColor),
-                      textStyle: 
-                      MaterialStateProperty.all(
+                          MaterialStateProperty.all(AppColor.buttonColor),
+                      textStyle: MaterialStateProperty.all(
                         TextStyle(
-                        fontSize: 12.5,
-                         fontWeight: FontWeight.w600
-                         ),
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.w600,
                         ),
+                      ),
                     ),
                     child: Container(
                       width: MediaQuery.of(context).size.width - 210,
                       height: 45,
                       child: Center(
                         child: Text("LOG IN/SIGN UP"),
-                        ),
-                        ),
+                      ),
+                    ),
                   ),
-                  ),
-                
+                ),
               ],
             ),
           ),
@@ -122,14 +119,14 @@ class ProfileWithoutLogin extends StatelessWidget {
           const SizedBox(height: 18),
           FooterContent(),
 
-              const SizedBox(height: 50),
+          const SizedBox(height: 50),
 
-            Text("APP VERSION 0.0.1",
-                   style: Theme.of(context).textTheme.overline,
-                  ),
+          Text(
+            "APP VERSION 0.0.1",
+            style: Theme.of(context).textTheme.overline,
+          ),
 
-                      const SizedBox(height: 80),
-
+          const SizedBox(height: 80),
         ],
       ),
     );
