@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecom/feature/login/login_bottomsheet.dart';
+import 'package:flutter_ecom/foundation/theme/colors.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -11,9 +13,10 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Center(
-        child: Text("Categories"),
-      ),
+
+      backgroundColor: AppColor.scaffoldBGColor,
+
+       body: SafeArea(child: LoginBottomsheet()),
     );
   }
 }
