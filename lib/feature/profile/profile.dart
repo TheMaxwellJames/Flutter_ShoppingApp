@@ -26,7 +26,9 @@ class _ProfileState extends State<Profile> {
         ),
          
       ),
-       body: ProfileWithoutLogin()
+       body: SingleChildScrollView(
+        child: ProfileWithoutLogin(),
+        ),
     );
   }
 }

@@ -3,48 +3,52 @@ import 'package:flutter_ecom/feature/profile/footer_content.dart';
 import 'package:flutter_ecom/foundation/profile_item/profile_item.dart';
 import 'package:flutter_ecom/foundation/theme/colors.dart';
 
+//import 'footer_content.dart';
+
+
 class ProfileWithoutLogin extends StatelessWidget {
-  const ProfileWithoutLogin({Key? key});
+  const ProfileWithoutLogin({super.key});
+
+  final double topContainerheight = 190;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: ClampingScrollPhysics(), // Use ClampingScrollPhysics here
-      child: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height * 0.4, // Adjust the height as needed
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.23,
-                      color: AppColor.dummyBGColor,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.17,
-                      color: AppColor.whiteColor,
-                    ),
-                  ],
-                ),
-                Positioned(
-                  bottom: 20,
+    return Column(
+      children: [
+        Container(
+          height: topContainerheight,
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    height: topContainerheight* .58,
+                    color: AppColor.dummyBGColor,
+                  ),
+                  Container(
+                     height: topContainerheight* .42,
+                     color: AppColor.whiteColor,
+                  ),
+                ],
+              ),
+              Positioned(
+                bottom: 20,
                   left: 20,
-                  child: Container(
-                    height: 132,
-                    width: 132,
-                    child: Card(
+                child: Container(
+                  height: 132,
+                  width: 132,
+                  child: Card(
                       child: Container(
-                        padding: EdgeInsets.all(25),
-                        child: Image.asset("assets/images/profile.png"),
+                         padding: EdgeInsets.all(25),
+                        child: Image.asset("assets/images/profile.png",
+                           color: AppColor.captionColor,
+                        ),
                       ),
-                      color: AppColor.captionColor,
-                    ),
+                      
                   ),
                 ),
-
-                Positioned(
+              ),
+               Positioned(
                   bottom: 22,
                   left: 168,
                   child: ElevatedButton(
@@ -69,66 +73,77 @@ class ProfileWithoutLogin extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
+            ],
           ),
-          const SizedBox(height: 15),
-          Container(
-            color: AppColor.whiteColor,
-            child: Column(
-              children: [
-                ProfileItem(
-                  title: "Orders",
-                  subtitle: "Check your orders status",
-                  assetName: "orders.png",
-                  isLast: false,
-                ),
-                ProfileItem(
-                  title: "Help Center",
-                  subtitle: "Help regarding your recent purchase",
-                  assetName: "orders.png",
-                  isLast: false,
-                ),
-                ProfileItem(
-                  title: "Wishlist",
-                  subtitle: "Your most love style",
-                  assetName: "wishlist.png",
-                  isLast: true,
-                ),
-              ],
+        ),
+      const  SizedBox(height: 15,
+        ),
+        Container(
+          color: AppColor.whiteColor,
+          child: const Column(
+          children:  [
+            ProfileItem(
+              title: "Orders",
+              subtitle: "Check your orders status",
+              assetName: "orders.png",
+               isLast: false,
             ),
-          ),
-          const SizedBox(height: 15),
-          Container(
-            color: AppColor.whiteColor,
-            child: Column(
-              children: [
-                ProfileItem(
-                  title: "Scan for coupon",
-                  assetName: "orders.png",
-                  isLast: false,
-                ),
-                ProfileItem(
-                  title: "Refer & Earn",
-                  assetName: "wishlist.png",
-                  isLast: true,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 18),
-          FooterContent(),
 
-          const SizedBox(height: 50),
+             ProfileItem(
+              title: "Help Center",
+              subtitle: "Help regarding your recent purchase",
+              assetName: "orders.png",
+              isLast: false,
+            ),  
+
+               ProfileItem(
+              title: "Wishlist",
+              subtitle: "Your most love style",
+              assetName: "wishlist.png",
+               isLast: true,
+            ), 
+          ],
+        ),
+        ),
+
+            const  SizedBox(height: 15,
+        ),
+
+           Container(
+          color: AppColor.whiteColor,
+          child: const Column(
+          children:  [
+            ProfileItem(
+              title: "Scan for coupon",
+              
+              assetName: "orders.png",
+               isLast: false,
+            ),
+
+          
+               ProfileItem(
+              title: "Refer & Earn",
+              assetName: "wishlist.png",
+               isLast: true,
+            ), 
+          ],
+        ),
+        ),
+         const  SizedBox(height: 18,
+        ),
+       FooterContent(),
+
+          const SizedBox(height: 30),
 
           Text(
             "APP VERSION 0.0.1",
-            style: Theme.of(context).textTheme.overline,
+            style: Theme.of(context).textTheme.labelSmall,
           ),
 
-          const SizedBox(height: 80),
-        ],
-      ),
+          const SizedBox(height: 20),
+
+      ],
+      
     );
   }
 }
